@@ -1,0 +1,107 @@
+﻿Javascript problems                                
+
+
+function funky(o){
+        o = null;
+}
+var x = [];
+funky() = x;
+alert x;
+
+What is x?
+1. null
+2. []
+3. undefined
+4. throw
+Answer is B - o is a param, knows nothing about [ ] and value is [ ]. It changes what  o is pointing to
+
+
+function swap(a,b){
+        var temp = a;
+        a = b;
+        b = temp;
+}
+var x= 1, y = 2 ;
+swap(y,x);
+alert(x);
+
+
+What is x?
+1. 1
+2. 2
+3. undefined
+4. throw
+Answer is A. if it was a macro it would be B
+
+
+Write a function that takes an argument and returns that argument.
+
+
+function takeArgument(args){
+
+
+return args;
+} 
+
+
+var identity = function takeArgument(args){
+        return args;
+}
+
+
+Write two binary functions, add and mul, that take two numbers and return their sum and product
+
+
+function add(a,b){
+         return a+b;
+}
+
+
+function mul(a,b){
+        return a*b;
+}
+
+
+Write a function that takes an argument and returns a function that returns that argument
+idf = identityf()
+idf()
+function identity(x){
+        return function(){
+                return y;
+        };
+}
+
+
+Write a function that adds from two invocations
+add(4)(3)  // 7
+ function addf(x){
+        return function(y){
+                return x + y;
+        };
+}
+Write a function that takes a binary function, and makes it callable with two invocations
+addf = applyf(add)
+addf(3)(4) //7
+applyf(mul) (5) (6) //30
+
+
+function applyf(binary){
+ return function(x){
+        return function(y){
+                return binary(x,y);
+                };
+        }
+}
+
+
+
+
+
+
+
+
+Scope and closures:        
+        Nested scope
+        Hoisting
+        this
+        closure
